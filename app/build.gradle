@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "com.choices.imagecompare"
@@ -17,13 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     provided 'com.google.code.findbugs:findbugs:3.0.1'
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:recyclerview-v7:23.0.0'
+
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
     compile 'com.github.bumptech.glide:glide:3.6.1'
@@ -32,5 +39,4 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.6.1'
     compile 'com.facebook.fresco:imagepipeline-okhttp:0.6.1'
     compile 'com.facebook.fresco:drawee-volley:0.6.1'
-
 }
